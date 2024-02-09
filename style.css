@@ -87,6 +87,14 @@ div.boutons
 	display: flex;
 	justify-content: center;
 }
+button:hover
+{
+	border: solid black 0.15rem;
+}
+button:focus
+{
+
+}
 .Bouttons
 {
 	background: #277D70;
