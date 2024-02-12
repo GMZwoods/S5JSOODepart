@@ -12,7 +12,7 @@
     </header>
     <div class="commande">
       <fieldset>
-        <form name="Commande" onsubmit="merci.html" method="post">
+        <form name="Commande" onsubmit="Merci.html" method="get">
 
           <div class="container">
             <table>
@@ -29,9 +29,9 @@
 
               <tr id="Peches">
                 <td>Sac(s) de pêches</td>
-                <td id="prixPeches" class="prix" >10</td>
+                <td id="prixPeches" class="prix" >10</td><td>$</td>
                 <td>
-                  <input type="number" id="nbPeches" min="0">
+                  <input type="number" id="nbPeches" min="0" max="24">
                   <label for="nbPeches"></label>
                 </td>
                 <td class="sousTotalFruit"  id="sousTotalPeches"></td>
@@ -40,9 +40,9 @@
 
               <tr id="Poires">
                 <td>Sac(s) de poires</td>
-                <td id="prixPoires" class="prix">12</td>
+                <td id="prixPoires" class="prix">12</td><td>$</td>
                 <td>
-                  <input type="number" id="nbPoires" min="0" >
+                  <input type="number" id="nbPoires" min="0" max="24" >
                   <label for="nbPoires"></label>
                 </td>
                 <td class="sousTotalFruit"  id="sousTotalPoires"></td>
@@ -51,9 +51,9 @@
 
               <tr id="Pommes">
                 <td>Sac(s) de pommes</td>
-                <td id="prixPommes" class="prix">11</td>
+                <td id="prixPommes" class="prix">11</td><td>$</td>
                 <td>
-                  <input type="number" id="nbPommes" min="0" >
+                  <input type="number" id="nbPommes" min="0" max="24">
                   <label for="nbPommes"></label>
                 </td>
                 <td class="sousTotalFruit" id="sousTotalPommes"></td>
@@ -70,12 +70,13 @@
             </table>
           </div>
           <div class="container">
-            <p class="error invisible center">La valeur minimale des paniers est de 20$.</p>
+            <p class="error invisible center" hidden="until-found">La valeur minimale des paniers est de 20$.</p>
+            <span hidden="until-found" id="MessagesErreurs">Vous avez plus de 24 paniers! réduiser votre commande!</span>
             <div class="center">
               <input id="conditions" type="checkbox" required>
               <label for="conditions">J'ai lu et j'accepte les conditions de vente.</label>
               <div class="boutons">
-                <button disabled type="submit" class="Bouttons" id="Valider">Valider</button>
+                <button  type="submit" class="Bouttons" id="Valider" onclick="ConfirmationCommande()">Valider</button>
                 <button class="Bouttons" type="reset">Réinitialiser</button>
               </div>
             </div>

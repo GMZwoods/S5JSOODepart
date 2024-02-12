@@ -54,6 +54,10 @@ caption
 	display: flex;
 	justify-content: center;
 }
+#MessagesErreurs
+{
+	color: red;
+}
 
 /*---------------------------------------------------------------
 Tableaux
